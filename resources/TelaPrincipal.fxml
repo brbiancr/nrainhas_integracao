@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane xmlns:fx="http://javafx.com/fxml"
+          fx:controller="nrainhas.nrainhas_frontend.controller.TelaPrincipalController"
+          styleClass="telaPrincipal"
+          prefWidth="600" prefHeight="600" minWidth="300" minHeight="350" maxWidth="600" maxHeight="600"
+          alignment="CENTER" >
+
+    <HBox spacing="20" alignment="CENTER" GridPane.rowIndex="0" >
+        <Label text="Número de Rodadas" layoutX="20" layoutY="20"
+               styleClass="label"
+               GridPane.rowIndex="0" GridPane.columnIndex="0"
+               GridPane.halignment="CENTER"/>
+
+        <TextField fx:id="rodadasField" layoutX="150" layoutY="20" prefWidth="150"
+                   styleClass="textField"
+                   GridPane.rowIndex="0" GridPane.columnIndex="1"
+                   GridPane.halignment="CENTER"/>
+
+        <Button fx:id="iniciarButton" text="Iniciar" layoutX="150" layoutY="60"
+                styleClass="button"
+                GridPane.rowIndex="0" GridPane.columnIndex="2"
+                GridPane.halignment="CENTER"/>
+    </HBox>
+
+    <HBox spacing="20" alignment="CENTER" GridPane.rowIndex="1" GridPane.columnSpan="3">
+        <Button fx:id="pauseButton" text="Pausar" layoutX="150" layoutY="60"
+                styleClass="button"
+                GridPane.rowIndex="1" GridPane.columnIndex="0"
+                GridPane.halignment="CENTER"/>
+
+        <Button fx:id="restartButton" text="Reiniciar" layoutX="150" layoutY="60"
+                styleClass="button"
+                GridPane.rowIndex="1" GridPane.columnIndex="1"
+                GridPane.halignment="CENTER"/>
+    </HBox>
+
+
+    <GridPane fx:id="tabuleiroGrid" styleClass="bordaGridPane"
+              GridPane.rowIndex="2" GridPane.columnSpan="3"
+              VBox.vgrow="ALWAYS">
+        <!-- O tabuleiro será gerado dinamicamente aqui -->
+    </GridPane>
+
+</GridPane>

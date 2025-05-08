@@ -1,0 +1,23 @@
+/* Estilos básicos */
+.telaPrincipal {
+    -fx-background: linear-gradient(to right, #abbaab, #ffffff);
+}
+
+.label{
+    -fx-font-family: "Bookman";
+    -fx-font-size: 20px;
+}
+
+.textField{
+    -fx-background-color: #f0f0f0; /* Cor de fundo */
+    -fx-border-color: linear-gradient(to right, #abbaab, #ffffff);     /* Cor da borda */
+    -fx-border-width: 2px;         /* Largura da borda */
+    -fx-border-radius: 5px;        /* Bordas arredondadas */
+    -fx-padding: 10px;             /* Preenchimento interno */
+    -fx-font-size: 14px;           /* Tamanho da fonte */
+}
+
+.button{
+    -fx-background-color: #b4b4b4;
+    -fx-font-size: 18px;
+}
