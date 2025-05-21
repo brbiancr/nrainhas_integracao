@@ -1,3 +1,5 @@
+package nrainhas.nrainhas_frontend.nativebridge;
+
 public class NQueensNative {
     public native void inicializaPopulacao2(int [][]populacaoAtual, int TAMANHOPOPULACAO, int TAMANHOTABULEIRO);
     public native int[] evoluiPopulacao2(int rodada, int [][]individuosTorneio, int [][]pai, int []fitnessTorneio,
