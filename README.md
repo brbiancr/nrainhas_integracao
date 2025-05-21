@@ -21,10 +21,6 @@ A aplicação oferece uma interface gráfica em JavaFX onde o usuário pode inte
 - **Integração com Backend**: A aplicação será integrada com o backend, onde o Algoritmo Genético será executado de forma eficiente, e o frontend irá comunicar-se com o backend para receber os resultados das rodadas.
 - **Exibição da Evolução do Fitness**: Mostrar graficamente a evolução do fitness das soluções durante as rodadas, permitindo que o usuário acompanhe o progresso do algoritmo genético e veja como a solução se aproxima de uma solução ideal.
 
-## 📸 Imagens da Interface
-
-![image](https://github.com/user-attachments/assets/e9c14929-9307-44f9-984d-d6eb143226f7)
-![image](https://github.com/user-attachments/assets/120fa6c3-e20b-48cd-96ee-26d89d57cae8)
 
 ## 📎 Repositório Relacionado
 
