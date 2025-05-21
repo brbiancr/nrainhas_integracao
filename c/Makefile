@@ -2,7 +2,7 @@
 EXEC = programa
 
 # Arquivos fonte
-SRC = main.c
+SRC = main.c populacao.c fitness.c ordenacao.c print.c operadoresDeReproducao.c selecao.c
 
 # Regra padrão
 all: $(EXEC)
