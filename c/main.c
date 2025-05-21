@@ -11,8 +11,8 @@
 
 int main(){
 
-    int TAMANHOPOPULACAO = 1000;
-    int TAMANHOTABULEIRO = 16;
+    int TAMANHOPOPULACAO = 200;
+    int TAMANHOTABULEIRO = 8;
     int QUANTIDADEINDIVIDUOSPORTORNEIO = 5;
     double TAXAELITISMO = 0.2;
     double TAXAMUTACAO = 0.1;
@@ -60,8 +60,6 @@ int main(){
         return 0;
     }
 
-    srand(time(NULL));
-
     inicializaPopulacao(populacaoAtual, TAMANHOPOPULACAO, TAMANHOTABULEIRO);
     fitness(tabuleiro, fitnessDaPopulacao, encontrouSolucao, populacaoAtual, TAMANHOPOPULACAO, TAMANHOTABULEIRO);
     ordenaPopulacao(populacaoAtual, fitnessDaPopulacao, TAMANHOPOPULACAO, TAMANHOTABULEIRO);
@@ -69,13 +67,15 @@ int main(){
 
     novosDadosArq = fopen("novosDadosArq.txt", "a+");
     if(novosDadosArq == NULL){
-        printf("ERRO AO ABRIR ARQUIVO PARA SALVAR DADOS!\n");
+        printf("ERRO AO ABRIR ARQUIVO (novosDadosArq.txt) PARA SALVAR DADOS!\n");
         fclose(novosDadosArq);
         return 0;
     }
 
-    for (i = 0; encontrouSolucao == 0; i++){
-
+    fprintf(novosDadosArq, "Rodada\t");
+    fprintf(novosDadosArq, "Melhor fitness\t");
+    fprintf(novosDadosArq, "Pior fitness\t\n");
+    for (i = 0; encontrouSolucao == 0 && i < 1000; i++){
         evoluiPopulacao(i, individuosTorneio, pai, fitnessTorneio, tabuleiro, proximaPopulacao, encontrouSolucao, populacaoAtual, fitnessDaPopulacao,
                         TIPODESELECAO, TIPODECRUZAMENTO, TAMANHOPOPULACAO, TAMANHOTABULEIRO, TAXAELITISMO,
                         QUANTIDADEINDIVIDUOSPORTORNEIO, TAXAMUTACAO);
@@ -92,8 +92,9 @@ int main(){
             printf("%d ", populacaoAtual[TAMANHOPOPULACAO-1][j]);
         printf(" Fitness: %d \n", fitnessDaPopulacao[TAMANHOPOPULACAO-1]);
 
-        fprintf(novosDadosArq, "Melhor fitness\t%d", fitnessDaPopulacao[TAMANHOPOPULACAO-1]);
-        fprintf(novosDadosArq, "Pior fitness\t%d", fitnessDaPopulacao[0]);
+        fprintf(novosDadosArq, "%d\t", i + 1);
+        fprintf(novosDadosArq, "%d\t", fitnessDaPopulacao[TAMANHOPOPULACAO-1]);
+        fprintf(novosDadosArq, "%d\t\n", fitnessDaPopulacao[0]);
 
     }
 
