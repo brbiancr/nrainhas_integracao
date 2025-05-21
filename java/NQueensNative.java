@@ -10,7 +10,7 @@ public class NQueensNative {
     }
 
     public static void main(String[] args) {
-        int TAMANHOPOPULACAO = 10   ;
+        int TAMANHOPOPULACAO = 200;
         int TAMANHOTABULEIRO = 8;
         int [][]populacaoAtual = new int[TAMANHOPOPULACAO][TAMANHOTABULEIRO];
 
@@ -27,7 +27,6 @@ public class NQueensNative {
             System.out.println();
         }
 
-        int rodada = 0;
         int encontrouSolucao = 0;
         int QUANTIDADEINDIVDUOSTORNEIO = 5;
         int TIPODESELECAO = 2;
@@ -47,18 +46,17 @@ public class NQueensNative {
         int []melhorIndividuo = new int[TAMANHOTABULEIRO];
 
         for(int i = 0; encontrouSolucao == 0; i++){
-            melhorIndividuo = jni.evoluiPopulacao2(rodada, individuosTorneio, pai, fitnessTorneio, tabuleiro, proximaPopulacao,
+            melhorIndividuo = jni.evoluiPopulacao2(i, individuosTorneio, pai, fitnessTorneio, tabuleiro, proximaPopulacao,
                     encontrouSolucao, populacaoAtual, fitnessPopulacao, TIPODESELECAO, TIPODECRUZAMENTO, TAMANHOPOPULACAO,
                     TAMANHOTABULEIRO, TAXAELITISMO, QUANTIDADEINDIVDUOSTORNEIO, TAXAMUTACAO);
 
             if(fitnessPopulacao[TAMANHOPOPULACAO-1] == TAMANHOTABULEIRO)
                 encontrouSolucao = 1;
 
-            System.out.println("Melhor Individuo da rodada " + rodada);
+            System.out.println("Melhor Individuo da rodada " + i);
             for(int j = 0; j < TAMANHOTABULEIRO; j++)
                 System.out.print(melhorIndividuo[j] + " ");
             System.out.println("Fitness " + fitnessPopulacao[TAMANHOPOPULACAO-1]);
         }
-
     }
 }
